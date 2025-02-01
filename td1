@@ -1,0 +1,324 @@
+Lobna ♡, [10/19/2024 10:20 PM]
+#include <stdio.h>
+#include <stdbool.h>
+
+bool prime(int n) {
+    bool is_prime = true;
+    if (n <= 1) {
+        return false;  // Numbers <= 1 are not prime
+    }
+    for (int i = 2; i <= n / 2; i++) {  // Loop from 2 to n/2
+        if (n % i == 0) {  // Check if n is divisible by i
+            is_prime = false;
+            break;
+        }
+    }
+    return is_prime;
+}
+
+int main() {
+    int a;
+    printf("Enter a number: ");
+    scanf("%d", &a);
+    if (prime(a)) {
+        printf("%d is a prime number.\n", a);
+    } else {
+        printf("%d is not a prime number.\n", a);
+    }
+    return 0;
+}
+
+Lobna ♡, [10/19/2024 11:02 PM]
+
+//exo1.3
+#include<stdio.h>
+int lcm(int n1,int n2)
+{
+int i,l;
+for(i=n1;i<=n2;i++)
+{
+if(i%n1=0 ||i%n2=0)
+{
+l=i;
+}
+}
+return l;
+}
+
+int main()
+{
+    int a,b;
+    printf("enter two numbers");
+    scanf("%d%d",&a,&b);
+    printf("%d",lcm(a,b));
+    return 0;
+}
+
+Lobna ♡, [10/19/2024 11:04 PM
+
+//exo1.2
+#include<stdio.h>
+int hct(int n1,int n2)
+{
+int i,h;
+for(i=n1;i<=n2;i++)
+{
+if(n1%i=0 ||n2%i=0)
+{
+h=i;
+}
+}
+return h;
+}
+
+int main()
+{
+    int a,b;
+    printf("enter two numbers");
+    scanf("%d%d",&a,&b);
+    printf("%d",hct(a,b));
+    return 0;
+}
+
+Lobna ♡, [10/19/2024 11:10 PM]
+\\Exo 1 python
+def isPrime(number):
+    if number < 2:
+        return False
+    for i in range(2, number): 
+        if number % i == 0:
+            return False
+    return True
+
+user_input = input("enter a number :")
+number = int(user_input) 
+print(isPrime(number))
+
+Lobna ♡, [10/19/2024 11:11 PM]
+
+#exo1.4
+def generateAllPrime(number) :
+    def isPrime(number):
+        if number < 2 :
+            return False
+        count = 0
+        for i in range(2,number):
+            if number % i == 0:
+                count+=1
+                if(count > 1):
+                    return False
+        return True
+
+
+    result = [];
+    for i in range(0,number):
+        if isPrime(i) :
+            result.append(i)
+    
+    return result
+
+user_input = input("enter a number :")
+number = int(user_input) 
+print(generateAllPrime(number))
+
+Lobna ♡, [10/19/2024 11:12 PM]
+
+# 2.7
+def fact(number) :
+    result = 1;
+    for i in range(number) :
+        result += result * i
+    
+    return result
+
+
+user_input = input("enter a number :")
+number = int(user_input) 
+print(fact(number))
+
+Lobna ♡, [10/19/2024 11:12 PM]
+# 2.6
+def harmonic_sum(num) :
+    if num < 1:
+        return 0
+    
+    result = 0.0
+    for i in range(num):
+        result += (1/i) 
+
+    return result
+
+
+user_input = input("enter a number :")
+number = int(user_input) 
+print(harmonic_sum(number))
+
+Lobna ♡, [10/19/2024 11:12 PM]
+# 2.4
+def squaresSum(num) :
+    
+    result = 0
+    for i in range(num):
+        result += i ** 2; 
+
+    return result
+
+
+user_input = input("enter a number :")
+number = int(user_input) 
+print(squaresSum(number))
+
+Lobna ♡, [10/19/2024 11:23 PM]
+Exo 07
+#include <stdio.h>
+
+
+long long mod_exp(long long base, long long exp, long long mod) {
+    long long result = 1;
+    base = base % mod;
+
+    while (exp > 0) {
+        if (exp % 2 == 1) { 
+            result = (result * base) % mod;
+        }
+        exp = exp >> 1; // Divide exp by 2
+        base = (base * base) % mod; 
+    }
+    return result;
+}
+
+
+long long compute_mod(long long A, long long B, long long P) {
+   
+    long long B_mod = B % (P - 1);
+    return mod_exp(A, B_mod, P);
+}
+
+int main() {
+    long long A, B, P;
+    
+    
+    printf("Enter A, B, P (where P is prime): ");
+    scanf("%lld %lld %lld", &A, &B, &P);
+    
+    long long result = compute_mod(A, B, P);
+    printf("Result: %lld\n", result);
+    
+    return 0;
+}
+
+Lobna ♡, [10/19/2024 11:23 PM]
+#include <stdio.h>
+
+int sum_of_divisors(int N) {
+    int sum = 0;
+    for (int i = 1;  i <= N; i++) {
+        if (N % i == 0) {
+            sum += i;
+
+            }
+        }
+    }
+    return sum;
+}
+
+int main() {
+    int N;
+    printf("Enter a number (1 ≤ N ≤ 10^6): ");
+    scanf("%d", &N);
+
+    if (N < 1 || N > 1000000) {
+        printf("Invalid input! Please enter a number between 1 and 1,000,000.\n");
+        return 1;
+    }
+
+    int result = sum_of_divisors(N);
+    printf("Sum of divisors of %d is %d\n", N, result);
+
+    return 0;
+}
+
+Lobna ♡, [10/19/2024 11:23 PM]
+#include <stdio.h>
+
+
+
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+
+
+
+void extendedGCD(int a, int b, int *x, int *y) {
+    if (b == 0) {
+        *x = 1;
+        *y = 0;
+        return;
+    }
+
+    int x1, y1;
+    extendedGCD(b, a % b, &x1, &y1);
+
+    *x = y1;
+    *y = x1 - (a / b) * y1;
+}
+
+
+int findSolution(int A, int B, int C, int *x, int *y) {
+    int g = gcd(A, B);
+
+
+
+    if (C % g != 0) {
+        return 0;
+
+    }
+
+    int x0, y0;
+    extendedGCD(A, B, &x0, &y0);
+
+
+    *x = x0 * (C / g);
+    *y = y0 * (C / g);
+
+    return 1;
+}
+
+int main() {
+    int A, B, C;
+    printf("Enter values for A, B, and C: ");
+    scanf("%d %d %d", &A, &B, &C);
+
+    int x, y;
+    if (findSolution(A, B, C, &x, &y)) {
+        printf("One solution is: x = %d, y = %d\n", x, y);
+    } else {
+        printf("No integer solution exists.\n");
+    }
+
+    return 0;
+}
+
+Lobna ♡, [10/20/2024 12:50 AM]
+
+//exo 1.8
+#include<stdio.h>
+
+int main()
+{
+    int n,i,sum;
+    printf("enter the number :");
+    scanf("%d",&n);
+    sum=0;
+    for(i=1;i<=n;i++)
+    {
+    if(n%i==0)
+    {
+    sum=sum+i;
+    }
+    }
+    printf("%d",sum);
+    return 0;
+}
